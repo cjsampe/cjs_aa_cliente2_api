@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "QeqTxfuBhLGzVpg+pCzKtrrWY2mPVTL6ygyxgEWOab1mUCzrxNCTi32a+UJN4MUx/q9YmYGknMi34g+/9GHtKA==",
+  "success": true,
+  "projectFilePath": "D:\\ActividadesAprendizaje-2\\cjs_aa_cliente2\\cjs_aa_cliente2_api\\cjs_aa_cliente2_api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Atramento\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Atramento\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Atramento\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Atramento\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Atramento\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Atramento\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
