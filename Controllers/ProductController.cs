@@ -59,11 +59,8 @@ namespace cjs_aa_cliente2_api.Controllers
     }
 
     [HttpPut]
-    //en este caso meto yo el ID pero no es lo normal
     public ActionResult Put(ProductItem productItem){
-        // ANTERIOR     var existingHeroItem = Heroes.Find(x => x.Id == heroItem.Id);
-
-
+    
         var existingProductItem = _context.Products.Find(productItem.id);
 
         if (existingProductItem == null) {
