@@ -11,7 +11,7 @@ namespace cjs_aa_cliente2_api{
     public string? mainImage { get; set; }
     public int disccount { get; set; }
     //como son varias ¿vale así?
-    public int images { get; set; }
+    public int image { get; set; }
 }
 
 }
