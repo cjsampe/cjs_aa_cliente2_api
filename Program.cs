@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using  cjs_aa_cliente2_api.Data;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +17,22 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "cjs_aa_cliente2",
+        Description = "API ecommerce, AA2, Maria Carmen Jimenez Samperiz, DAW",
+    });
+
+     // https://docs.microsoft.com/es-es/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio-code
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
+
+
+
 
 //services cors
 builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
