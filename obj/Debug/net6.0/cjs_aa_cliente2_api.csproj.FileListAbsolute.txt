@@ -60,3 +60,5 @@ D:\ActividadesAprendizaje-2\cjs_aa_cliente2\cjs_aa_cliente2_api\bin\Debug\net6.0
 D:\ActividadesAprendizaje-2\cjs_aa_cliente2\cjs_aa_cliente2_api\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\ActividadesAprendizaje-2\cjs_aa_cliente2\cjs_aa_cliente2_api\bin\Debug\net6.0\Humanizer.dll
 D:\ActividadesAprendizaje-2\cjs_aa_cliente2\cjs_aa_cliente2_api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\ActividadesAprendizaje-2\cjs_aa_cliente2\cjs_aa_cliente2_api\bin\Debug\net6.0\cjs_aa_cliente2_api.xml
+D:\ActividadesAprendizaje-2\cjs_aa_cliente2\cjs_aa_cliente2_api\obj\Debug\net6.0\cjs_aa_cliente2_api.xml

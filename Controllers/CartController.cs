@@ -25,13 +25,24 @@ namespace cjs_aa_cliente2_api.Controllers
         _context = context;
     }
 
-
+    /// <summary>
+    /// Get all carts
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns>All carts</returns>
+    /// <response code="200">OK get all carts</response>
     [HttpGet]
     public ActionResult<List<CartItem>> Get() {
 
         return Ok(_context.Carts);
     }
 
+    /// <summary>
+    /// Get a cart by id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns>Get a cart by id</returns>
+    /// <response code="200">OK get a cart by id</response>  
     [HttpGet]
     [Route("{Id}")]
     public ActionResult<CartItem> Get(int Id) {
@@ -40,6 +51,12 @@ namespace cjs_aa_cliente2_api.Controllers
         return CartItem == null ? NotFound() : Ok(CartItem);
     }
 
+
+    /// <summary>
+    /// Post an cart 
+    /// </summary>
+    /// <returns>Post a cart by Id</returns>
+    /// <response code="200">Item POST ok</response>
     [HttpPost]
     public ActionResult Post(CartItem cartItem){
         var existingCartItem = _context.Carts.Find(cartItem.id);
@@ -53,6 +70,12 @@ namespace cjs_aa_cliente2_api.Controllers
         }
     }
 
+
+    /// <summary>
+    /// PUT a cart by Id
+    /// </summary>
+    /// <returns>Put a cart by Id</returns>
+    /// <response code="200">Item PUT ok</response>
     [HttpPut]
     public ActionResult Put(CartItem cartItem){
         var existingCartItem = _context.Carts.Find(cartItem.id);
@@ -69,6 +92,11 @@ namespace cjs_aa_cliente2_api.Controllers
         }
     }
 
+    /// <summary>
+    /// Delete a cart by Id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns>OK delete a cart by Id</returns>
     [HttpDelete]
     [Route("{Id}")]
     public ActionResult<ProductItem> Delete(int Id) {

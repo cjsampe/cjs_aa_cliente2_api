@@ -25,21 +25,40 @@ namespace cjs_aa_cliente2_api.Controllers
         _context = context;
     }
 
-
+    /// <summary>
+    /// Get all products
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns>All products</returns>
+    /// <response code="200">ok, Get all products</response>    
     [HttpGet]
-    public ActionResult<List<ProductItem>> Get() {
-
+    public ActionResult<IEnumerable<ProductItem>> Get() {
+        IEnumerable<ProductItem> products = _context.Products
+            .Include(product => product.images)
+            .ToList();
         return Ok(_context.Products);
     }
 
+    /// <summary>
+    /// Get a product by id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns>Get a product by id</returns>
+    /// <response code="200">OK get a product by id</response>  
     [HttpGet]
     [Route("{Id}")]
-    public ActionResult<ProductItem> Get(int Id) {
+    public ActionResult<ProductItem> Get(int id) {
         
-        var heroItem = _context.Products.Find(Id);
-        return heroItem == null ? NotFound() : Ok(heroItem);
+        var productItem = _context.Products.Find(id);
+        return productItem == null ? NotFound() : Ok(productItem);
     }
 
+
+    /// <summary>
+    /// Post a product 
+    /// </summary>
+    /// <returns>Post an product by Id</returns>
+    /// <response code="200">Item POST ok</response>
     [HttpPost]
     public ActionResult Post(ProductItem productItem){
         var existingProductItem = _context.Products.Find(productItem.id);
@@ -58,6 +77,11 @@ namespace cjs_aa_cliente2_api.Controllers
         }
     }
 
+    /// <summary>
+    /// PUT a product by Id
+    /// </summary>
+    /// <returns>Put a product by Id</returns>
+    /// <response code="200">Item PUT ok</response>
     [HttpPut]
     public ActionResult Put(ProductItem productItem){
     
@@ -74,11 +98,17 @@ namespace cjs_aa_cliente2_api.Controllers
         }
     }
 
+
+    /// <summary>
+    /// Delete a product by Id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns>OK delete a product by Id</returns>
     [HttpDelete]
     [Route("{Id}")]
-    public ActionResult<ProductItem> Delete(int Id) {
+    public ActionResult<ProductItem> Delete(int id) {
     
-        var existingProductItem = _context.Products.Find(Id);
+        var existingProductItem = _context.Products.Find(id);
         if (existingProductItem == null){
             return NotFound("Heroe no encontrado");
         } else{

@@ -25,14 +25,24 @@ namespace cjs_aa_cliente2_api.Controllers
         _context = context;
     }
 
-
+    /// <summary>
+    /// Get all orders
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns>All orders</returns>
+    /// <response code="200">OK get all orders</response>
     [HttpGet]
     public ActionResult<List<OrderItem>> Get() {
 
         return Ok(_context.Carts);
     }
 
-
+    /// <summary>
+    /// Get an order by id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns>Get an order by id</returns>
+    /// <response code="200">OK get an order by id</response>
     [HttpGet]
     [Route("{Id}")]
     public ActionResult<OrderItem> Get(int Id) {
@@ -41,6 +51,11 @@ namespace cjs_aa_cliente2_api.Controllers
         return OrderItem == null ? NotFound() : Ok(OrderItem);
     }
 
+    /// <summary>
+    /// Post an order 
+    /// </summary>
+    /// <returns>Post an order by Id</returns>
+    /// <response code="200">Item POST ok</response>
     [HttpPost]
     public ActionResult Post(OrderItem orderItem){
         var existingOrderItem = _context.Orders.Find(orderItem.id);
@@ -54,6 +69,11 @@ namespace cjs_aa_cliente2_api.Controllers
         }
     }
 
+    /// <summary>
+    /// PUT an order by Id
+    /// </summary>
+    /// <returns>Put an order by Id</returns>
+    /// <response code="200">Item PUT ok</response>
     [HttpPut]
     public ActionResult Put(OrderItem orderItem){
         var existingOrderItem = _context.Orders.Find(orderItem.id);
@@ -62,8 +82,7 @@ namespace cjs_aa_cliente2_api.Controllers
             return Conflict("No existe el carrito con ese id");
         } else {
             existingOrderItem.quantity = orderItem.quantity;
-            existingOrderItem.productID = orderItem.productID;
-            existingOrderItem.productID = orderItem.price;
+            existingOrderItem.productId = orderItem.productId;
             
             _context.SaveChanges(); //instruccion para guardar cambios
 
@@ -71,6 +90,11 @@ namespace cjs_aa_cliente2_api.Controllers
         }
     }
 
+    /// <summary>
+    /// Delete an order by Id
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns>OK delete a order by Id</returns>
     [HttpDelete]
     [Route("{Id}")]
     public ActionResult<OrderItem> Delete(int Id) {
