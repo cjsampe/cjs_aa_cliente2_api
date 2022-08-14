@@ -46,10 +46,13 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>Get a product by id</returns>
     /// <response code="200">OK get a product by id</response>  
     [HttpGet]
-    [Route("{Id}")]
+    [Route("{id}")]
     public ActionResult<ProductItem> Get(int id) {
         
         var productItem = _context.Products.Find(id);
+        IEnumerable<ProductItem> products = _context.Products
+            .Include(product => product.images)
+            .ToList();
         return productItem == null ? NotFound() : Ok(productItem);
     }
 

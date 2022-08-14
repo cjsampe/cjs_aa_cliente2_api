@@ -10,7 +10,7 @@
             </summary>
             <param name="item"></param>
             <returns>All carts</returns>
-            <response code="200">Get all CartItem</response>
+            <response code="200">OK get all carts</response>
         </member>
         <member name="M:cjs_aa_cliente2_api.Controllers.CartController.Get(System.Int32)">
             <summary>
@@ -24,7 +24,7 @@
             <summary>
             Post an cart 
             </summary>
-            <returns>Post an cart by Id</returns>
+            <returns>Post a cart by Id</returns>
             <response code="200">Item POST ok</response>
         </member>
         <member name="M:cjs_aa_cliente2_api.Controllers.CartController.Put(cjs_aa_cliente2_api.CartItem)">
@@ -36,7 +36,7 @@
         </member>
         <member name="M:cjs_aa_cliente2_api.Controllers.CartController.Delete(System.Int32)">
             <summary>
-            Delete a specific cart
+            Delete a cart by Id
             </summary>
             <param name="id"></param>
             <returns>OK delete a cart by Id</returns>
@@ -80,11 +80,11 @@
         </member>
         <member name="M:cjs_aa_cliente2_api.Controllers.ProductController.Get">
             <summary>
-            Get all Products
+            Get all products
             </summary>
             <param name="item"></param>
             <returns>All products</returns>
-            <response code="200">Get all ProductItem</response>    
+            <response code="200">ok, Get all products</response>    
         </member>
         <member name="M:cjs_aa_cliente2_api.Controllers.ProductController.Get(System.Int32)">
             <summary>
@@ -96,7 +96,7 @@
         </member>
         <member name="M:cjs_aa_cliente2_api.Controllers.ProductController.Post(cjs_aa_cliente2_api.ProductItem)">
             <summary>
-            Post an product 
+            Post a product 
             </summary>
             <returns>Post an product by Id</returns>
             <response code="200">Item POST ok</response>
