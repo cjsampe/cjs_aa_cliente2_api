@@ -9,7 +9,7 @@ namespace cjs_aa_cliente2_api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Carts",
+                name: "Cart",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -19,7 +19,7 @@ namespace cjs_aa_cliente2_api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Carts", x => x.id);
+                    table.PrimaryKey("PK_Cart", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -62,28 +62,28 @@ namespace cjs_aa_cliente2_api.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProductItemid = table.Column<int>(type: "int", nullable: true)
+                    ProductsItemid = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductImageItem", x => x.id);
                     table.ForeignKey(
-                        name: "FK_ProductImageItem_Products_ProductItemid",
-                        column: x => x.ProductItemid,
+                        name: "FK_ProductImageItem_Products_ProductsItemid",
+                        column: x => x.ProductsItemid,
                         principalTable: "Products",
                         principalColumn: "id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductImageItem_ProductItemid",
+                name: "IX_ProductImageItem_ProductsItemid",
                 table: "ProductImageItem",
-                column: "ProductItemid");
+                column: "ProductsItemid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Carts");
+                name: "Cart");
 
             migrationBuilder.DropTable(
                 name: "Orders");

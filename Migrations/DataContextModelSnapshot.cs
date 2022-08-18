@@ -38,10 +38,10 @@ namespace cjs_aa_cliente2_api.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Cart");
                 });
 
-            modelBuilder.Entity("cjs_aa_cliente2_api.OrderItem", b =>
+            modelBuilder.Entity("cjs_aa_cliente2_api.OrdersItem", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace cjs_aa_cliente2_api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int?>("ProductItemid")
+                    b.Property<int?>("ProductsItemid")
                         .HasColumnType("int");
 
                     b.Property<string>("image")
@@ -77,12 +77,12 @@ namespace cjs_aa_cliente2_api.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("ProductItemid");
+                    b.HasIndex("ProductsItemid");
 
                     b.ToTable("ProductImageItem");
                 });
 
-            modelBuilder.Entity("cjs_aa_cliente2_api.ProductItem", b =>
+            modelBuilder.Entity("cjs_aa_cliente2_api.ProductsItem", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -124,12 +124,12 @@ namespace cjs_aa_cliente2_api.Migrations
 
             modelBuilder.Entity("cjs_aa_cliente2_api.ProductImageItem", b =>
                 {
-                    b.HasOne("cjs_aa_cliente2_api.ProductItem", null)
+                    b.HasOne("cjs_aa_cliente2_api.ProductsItem", null)
                         .WithMany("images")
-                        .HasForeignKey("ProductItemid");
+                        .HasForeignKey("ProductsItemid");
                 });
 
-            modelBuilder.Entity("cjs_aa_cliente2_api.ProductItem", b =>
+            modelBuilder.Entity("cjs_aa_cliente2_api.ProductsItem", b =>
                 {
                     b.Navigation("images");
                 });

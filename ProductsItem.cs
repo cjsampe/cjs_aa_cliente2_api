@@ -1,6 +1,6 @@
 namespace cjs_aa_cliente2_api{
 
-    public class ProductItem
+    public class ProductsItem
 {
      public int id { get; set; }
     public string name { get; set; }

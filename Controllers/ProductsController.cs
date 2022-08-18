@@ -10,7 +10,7 @@ namespace cjs_aa_cliente2_api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
- public class ProductController : ControllerBase{
+ public class productsController : ControllerBase{
 
 
 
@@ -21,7 +21,7 @@ namespace cjs_aa_cliente2_api.Controllers
 
 
     //NUEVO
-    public ProductController(DataContext context){
+    public productsController(DataContext context){
         _context = context;
     }
 
@@ -32,12 +32,13 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>All products</returns>
     /// <response code="200">ok, Get all products</response>    
     [HttpGet]
-    public ActionResult<IEnumerable<ProductItem>> Get() {
-        IEnumerable<ProductItem> products = _context.Products
-            .Include(product => product.images)
+    public ActionResult<IEnumerable<ProductsItem>> Get() {
+        IEnumerable<ProductsItem> products = _context.Products
+            .Include(products => products.images)
             .ToList();
-        return Ok(_context.Products);
-    }
+        return Ok(products);
+    }    
+
 
     /// <summary>
     /// Get a product by id
@@ -47,11 +48,11 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <response code="200">OK get a product by id</response>  
     [HttpGet]
     [Route("{id}")]
-    public ActionResult<ProductItem> Get(int id) {
+    public ActionResult<ProductsItem> Get(int id) {
         
         var productItem = _context.Products.Find(id);
-        IEnumerable<ProductItem> products = _context.Products
-            .Include(product => product.images)
+        IEnumerable<ProductsItem> products = _context.Products
+            .Include(products => products.images)
             .ToList();
         return productItem == null ? NotFound() : Ok(productItem);
     }
@@ -63,22 +64,16 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>Post an product by Id</returns>
     /// <response code="200">Item POST ok</response>
     [HttpPost]
-    public ActionResult Post(ProductItem productItem){
+    public ActionResult Post(ProductsItem productItem){
         var existingProductItem = _context.Products.Find(productItem.id);
 
-        //aquí no se pone un ternario xq se va a poner más código
-        if (existingProductItem != null) {
-            //si existe mesaje 
-            return Conflict("Ya existe el producto con ese id");
-        } else {
-            //si no existe se añade a nuestro array estática, sino seria a nuestra base de datos
             _context.Products.Add(productItem);
             _context.SaveChanges(); //instruccion para guardar cambios
-            //buena practica devolver la url del que de ha creado
+
             var resourceUrl = Request.Path.ToString() + "/" + productItem.id;
             return Created(resourceUrl, productItem);
         }
-    }
+
 
     /// <summary>
     /// PUT a product by Id
@@ -86,7 +81,7 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>Put a product by Id</returns>
     /// <response code="200">Item PUT ok</response>
     [HttpPut]
-    public ActionResult Put(ProductItem productItem){
+    public ActionResult Put(ProductsItem productItem){
     
         var existingProductItem = _context.Products.Find(productItem.id);
 
@@ -100,26 +95,5 @@ namespace cjs_aa_cliente2_api.Controllers
             return Ok();
         }
     }
-
-
-    /// <summary>
-    /// Delete a product by Id
-    /// </summary>
-    /// <param name="id"></param>
-    /// <returns>OK delete a product by Id</returns>
-    [HttpDelete]
-    [Route("{Id}")]
-    public ActionResult<ProductItem> Delete(int id) {
     
-        var existingProductItem = _context.Products.Find(id);
-        if (existingProductItem == null){
-            return NotFound("Heroe no encontrado");
-        } else{
-            _context.Products.Remove(existingProductItem);
-            _context.SaveChanges(); //instruccion para guardar cambios
-            return NoContent();
-        }
-    }
-
- }
-}
+    }}
