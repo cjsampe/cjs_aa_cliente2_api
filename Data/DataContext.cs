@@ -6,11 +6,11 @@ namespace cjs_aa_cliente2_api.Data {
     
      public DataContext(DbContextOptions<DataContext> options) : base(options) {}
 
-    public DbSet<ProductItem>? Products { get; set; }
+    public DbSet<ProductsItem>? Products { get; set; }
 
-    public DbSet<OrderItem>? Orders { get; set; }
+    public DbSet<OrdersItem>? Orders { get; set; }
 
-     public DbSet<CartItem>? Carts { get; set; }
+     public DbSet<CartItem>? Cart { get; set; }
 
 
     }

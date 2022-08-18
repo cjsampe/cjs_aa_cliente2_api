@@ -10,7 +10,7 @@ namespace cjs_aa_cliente2_api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
- public class OrderController : ControllerBase{
+ public class ordersController : ControllerBase{
 
 
 
@@ -21,7 +21,7 @@ namespace cjs_aa_cliente2_api.Controllers
 
 
     //NUEVO
-    public OrderController(DataContext context){
+    public ordersController(DataContext context){
         _context = context;
     }
 
@@ -32,9 +32,9 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>All orders</returns>
     /// <response code="200">OK get all orders</response>
     [HttpGet]
-    public ActionResult<List<OrderItem>> Get() {
+    public ActionResult<List<OrdersItem>> Get() {
 
-        return Ok(_context.Carts);
+        return Ok(_context.Cart);
     }
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <response code="200">OK get an order by id</response>
     [HttpGet]
     [Route("{Id}")]
-    public ActionResult<OrderItem> Get(int Id) {
+    public ActionResult<OrdersItem> Get(int Id) {
         
         var OrderItem = _context.Orders.Find(Id);
         return OrderItem == null ? NotFound() : Ok(OrderItem);
@@ -57,7 +57,7 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>Post an order by Id</returns>
     /// <response code="200">Item POST ok</response>
     [HttpPost]
-    public ActionResult Post(OrderItem orderItem){
+    public ActionResult Post(OrdersItem orderItem){
         var existingOrderItem = _context.Orders.Find(orderItem.id);
         if (existingOrderItem != null) {
             return Conflict("Ya existe una orden con ese id");
@@ -75,7 +75,7 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>Put an order by Id</returns>
     /// <response code="200">Item PUT ok</response>
     [HttpPut]
-    public ActionResult Put(OrderItem orderItem){
+    public ActionResult Put(OrdersItem orderItem){
         var existingOrderItem = _context.Orders.Find(orderItem.id);
 
         if (existingOrderItem == null) {
@@ -97,7 +97,7 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>OK delete a order by Id</returns>
     [HttpDelete]
     [Route("{Id}")]
-    public ActionResult<OrderItem> Delete(int Id) {
+    public ActionResult<OrdersItem> Delete(int Id) {
     
         var existingOrderItem = _context.Orders.Find(Id);
         if (existingOrderItem == null){

@@ -1,16 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
-
-
-//NUEVO
 using  cjs_aa_cliente2_api.Data;
 
 namespace cjs_aa_cliente2_api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
- public class CartController : ControllerBase{
+ public class cartController : ControllerBase{
 
 
 
@@ -21,7 +17,7 @@ namespace cjs_aa_cliente2_api.Controllers
 
 
     //NUEVO
-    public CartController(DataContext context){
+    public cartController(DataContext context){
         _context = context;
     }
 
@@ -34,7 +30,7 @@ namespace cjs_aa_cliente2_api.Controllers
     [HttpGet]
     public ActionResult<List<CartItem>> Get() {
 
-        return Ok(_context.Carts);
+        return Ok(_context.Cart);
     }
 
     /// <summary>
@@ -47,7 +43,7 @@ namespace cjs_aa_cliente2_api.Controllers
     [Route("{Id}")]
     public ActionResult<CartItem> Get(int Id) {
         
-        var CartItem = _context.Carts.Find(Id);
+        var CartItem = _context.Cart.Find(Id);
         return CartItem == null ? NotFound() : Ok(CartItem);
     }
 
@@ -59,11 +55,11 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <response code="200">Item POST ok</response>
     [HttpPost]
     public ActionResult Post(CartItem cartItem){
-        var existingCartItem = _context.Carts.Find(cartItem.id);
+        CartItem existingCartItem = _context.Cart.Find(cartItem.id);
         if (existingCartItem != null) {
             return Conflict("Ya existe el carrito con ese id");
         } else {
-            _context.Carts.Add(cartItem);
+            _context.Cart.Add(cartItem);
             _context.SaveChanges(); //instruccion para guardar cambios
             var resourceUrl = Request.Path.ToString() + "/" + cartItem.id;
             return Created(resourceUrl, cartItem);
@@ -78,13 +74,13 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <response code="200">Item PUT ok</response>
     [HttpPut]
     public ActionResult Put(CartItem cartItem){
-        var existingCartItem = _context.Carts.Find(cartItem.id);
+        var existingCartItem = _context.Cart.Find(cartItem.id);
 
         if (existingCartItem == null) {
             return Conflict("No existe el carrito con ese id");
         } else {
             existingCartItem.quantity = cartItem.quantity;
-            existingCartItem.productID = cartItem.productID;
+            existingCartItem.productId = cartItem.productId;
             
             _context.SaveChanges(); //instruccion para guardar cambios
 
@@ -99,13 +95,13 @@ namespace cjs_aa_cliente2_api.Controllers
     /// <returns>OK delete a cart by Id</returns>
     [HttpDelete]
     [Route("{Id}")]
-    public ActionResult<ProductItem> Delete(int Id) {
+    public ActionResult<CartItem> Delete(int Id) {
     
-        var existingCartItem = _context.Carts.Find(Id);
+        var existingCartItem = _context.Cart.Find(Id);
         if (existingCartItem == null){
             return NotFound("Elemento carrito no encontrado");
         } else{
-            _context.Carts.Remove(existingCartItem);
+            _context.Cart.Remove(existingCartItem);
             _context.SaveChanges(); //instruccion para guardar cambios
             return NoContent();
         }

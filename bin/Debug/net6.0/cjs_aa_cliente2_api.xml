@@ -4,7 +4,7 @@
         <name>cjs_aa_cliente2_api</name>
     </assembly>
     <members>
-        <member name="M:cjs_aa_cliente2_api.Controllers.CartController.Get">
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Get">
             <summary>
             Get all carts
             </summary>
@@ -12,7 +12,7 @@
             <returns>All carts</returns>
             <response code="200">OK get all carts</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.CartController.Get(System.Int32)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Get(System.Int32)">
             <summary>
             Get a cart by id
             </summary>
@@ -20,28 +20,28 @@
             <returns>Get a cart by id</returns>
             <response code="200">OK get a cart by id</response>  
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.CartController.Post(cjs_aa_cliente2_api.CartItem)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Post(cjs_aa_cliente2_api.CartItem)">
             <summary>
             Post an cart 
             </summary>
             <returns>Post a cart by Id</returns>
             <response code="200">Item POST ok</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.CartController.Put(cjs_aa_cliente2_api.CartItem)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Put(cjs_aa_cliente2_api.CartItem)">
             <summary>
             PUT a cart by Id
             </summary>
             <returns>Put a cart by Id</returns>
             <response code="200">Item PUT ok</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.CartController.Delete(System.Int32)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Delete(System.Int32)">
             <summary>
             Delete a cart by Id
             </summary>
             <param name="id"></param>
             <returns>OK delete a cart by Id</returns>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.OrderController.Get">
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Get">
             <summary>
             Get all orders
             </summary>
@@ -49,7 +49,7 @@
             <returns>All orders</returns>
             <response code="200">OK get all orders</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.OrderController.Get(System.Int32)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Get(System.Int32)">
             <summary>
             Get an order by id
             </summary>
@@ -57,28 +57,28 @@
             <returns>Get an order by id</returns>
             <response code="200">OK get an order by id</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.OrderController.Post(cjs_aa_cliente2_api.OrderItem)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Post(cjs_aa_cliente2_api.OrdersItem)">
             <summary>
             Post an order 
             </summary>
             <returns>Post an order by Id</returns>
             <response code="200">Item POST ok</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.OrderController.Put(cjs_aa_cliente2_api.OrderItem)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Put(cjs_aa_cliente2_api.OrdersItem)">
             <summary>
             PUT an order by Id
             </summary>
             <returns>Put an order by Id</returns>
             <response code="200">Item PUT ok</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.OrderController.Delete(System.Int32)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Delete(System.Int32)">
             <summary>
             Delete an order by Id
             </summary>
             <param name="id"></param>
             <returns>OK delete a order by Id</returns>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.ProductController.Get">
+        <member name="M:cjs_aa_cliente2_api.Controllers.productsController.Get">
             <summary>
             Get all products
             </summary>
@@ -86,7 +86,7 @@
             <returns>All products</returns>
             <response code="200">ok, Get all products</response>    
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.ProductController.Get(System.Int32)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.productsController.Get(System.Int32)">
             <summary>
             Get a product by id
             </summary>
@@ -94,26 +94,19 @@
             <returns>Get a product by id</returns>
             <response code="200">OK get a product by id</response>  
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.ProductController.Post(cjs_aa_cliente2_api.ProductItem)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.productsController.Post(cjs_aa_cliente2_api.ProductsItem)">
             <summary>
             Post a product 
             </summary>
             <returns>Post an product by Id</returns>
             <response code="200">Item POST ok</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.ProductController.Put(cjs_aa_cliente2_api.ProductItem)">
+        <member name="M:cjs_aa_cliente2_api.Controllers.productsController.Put(cjs_aa_cliente2_api.ProductsItem)">
             <summary>
             PUT a product by Id
             </summary>
             <returns>Put a product by Id</returns>
             <response code="200">Item PUT ok</response>
-        </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.ProductController.Delete(System.Int32)">
-            <summary>
-            Delete a product by Id
-            </summary>
-            <param name="id"></param>
-            <returns>OK delete a product by Id</returns>
         </member>
     </members>
 </doc>
