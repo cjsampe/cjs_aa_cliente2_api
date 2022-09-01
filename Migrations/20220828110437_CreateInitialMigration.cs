@@ -15,7 +15,7 @@ namespace cjs_aa_cliente2_api.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     quantity = table.Column<int>(type: "int", nullable: false),
-                    productID = table.Column<int>(type: "int", nullable: false)
+                    productId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

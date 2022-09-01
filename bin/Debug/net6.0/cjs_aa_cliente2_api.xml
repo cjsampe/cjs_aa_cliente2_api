@@ -64,13 +64,6 @@
             <returns>Post an order by Id</returns>
             <response code="200">Item POST ok</response>
         </member>
-        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Put(cjs_aa_cliente2_api.OrdersItem)">
-            <summary>
-            PUT an order by Id
-            </summary>
-            <returns>Put an order by Id</returns>
-            <response code="200">Item PUT ok</response>
-        </member>
         <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Delete(System.Int32)">
             <summary>
             Delete an order by Id

@@ -12,7 +12,7 @@ using cjs_aa_cliente2_api.Data;
 namespace cjs_aa_cliente2_api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220814130439_CreateInitialMigration")]
+    [Migration("20220828110437_CreateInitialMigration")]
     partial class CreateInitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,7 +32,7 @@ namespace cjs_aa_cliente2_api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int>("productID")
+                    b.Property<int>("productId")
                         .HasColumnType("int");
 
                     b.Property<int>("quantity")
