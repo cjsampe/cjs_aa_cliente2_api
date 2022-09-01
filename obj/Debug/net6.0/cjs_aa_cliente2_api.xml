@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>cjs_aa_cliente2_api</name>
+    </assembly>
+    <members>
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Get">
+            <summary>
+            Get all carts
+            </summary>
+            <param name="item"></param>
+            <returns>All carts</returns>
+            <response code="200">OK get all carts</response>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Get(System.Int32)">
+            <summary>
+            Get a cart by id
+            </summary>
+            <param name="id"></param>
+            <returns>Get a cart by id</returns>
+            <response code="200">OK get a cart by id</response>  
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Post(cjs_aa_cliente2_api.CartItem)">
+            <summary>
+            Post an cart 
+            </summary>
+            <returns>Post a cart by Id</returns>
+            <response code="200">Item POST ok</response>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Put(cjs_aa_cliente2_api.CartItem)">
+            <summary>
+            PUT a cart by Id
+            </summary>
+            <returns>Put a cart by Id</returns>
+            <response code="200">Item PUT ok</response>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.cartController.Delete(System.Int32)">
+            <summary>
+            Delete a cart by Id
+            </summary>
+            <param name="id"></param>
+            <returns>OK delete a cart by Id</returns>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Get">
+            <summary>
+            Get all orders
+            </summary>
+            <param name="item"></param>
+            <returns>All orders</returns>
+            <response code="200">OK get all orders</response>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Get(System.Int32)">
+            <summary>
+            Get an order by id
+            </summary>
+            <param name="id"></param>
+            <returns>Get an order by id</returns>
+            <response code="200">OK get an order by id</response>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Post(cjs_aa_cliente2_api.OrdersItem)">
+            <summary>
+            Post an order 
+            </summary>
+            <returns>Post an order by Id</returns>
+            <response code="200">Item POST ok</response>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.ordersController.Delete(System.Int32)">
+            <summary>
+            Delete an order by Id
+            </summary>
+            <param name="id"></param>
+            <returns>OK delete a order by Id</returns>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.productsController.Get">
+            <summary>
+            Get all products
+            </summary>
+            <param name="item"></param>
+            <returns>All products</returns>
+            <response code="200">ok, Get all products</response>    
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.productsController.Get(System.Int32)">
+            <summary>
+            Get a product by id
+            </summary>
+            <param name="id"></param>
+            <returns>Get a product by id</returns>
+            <response code="200">OK get a product by id</response>  
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.productsController.Post(cjs_aa_cliente2_api.ProductsItem)">
+            <summary>
+            Post a product 
+            </summary>
+            <returns>Post an product by Id</returns>
+            <response code="200">Item POST ok</response>
+        </member>
+        <member name="M:cjs_aa_cliente2_api.Controllers.productsController.Put(cjs_aa_cliente2_api.ProductsItem)">
+            <summary>
+            PUT a product by Id
+            </summary>
+            <returns>Put a product by Id</returns>
+            <response code="200">Item PUT ok</response>
+        </member>
+    </members>
+</doc>
