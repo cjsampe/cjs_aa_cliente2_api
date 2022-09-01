@@ -95,5 +95,4 @@ namespace cjs_aa_cliente2_api.Controllers
             return Ok();
         }
     }
-    
-    }}
+}}

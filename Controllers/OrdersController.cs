@@ -34,8 +34,9 @@ namespace cjs_aa_cliente2_api.Controllers
     [HttpGet]
     public ActionResult<List<OrdersItem>> Get() {
 
-        return Ok(_context.Cart);
+        return Ok(_context.Orders);
     }
+
 
     /// <summary>
     /// Get an order by id
@@ -69,26 +70,6 @@ namespace cjs_aa_cliente2_api.Controllers
         }
     }
 
-    /// <summary>
-    /// PUT an order by Id
-    /// </summary>
-    /// <returns>Put an order by Id</returns>
-    /// <response code="200">Item PUT ok</response>
-    [HttpPut]
-    public ActionResult Put(OrdersItem orderItem){
-        var existingOrderItem = _context.Orders.Find(orderItem.id);
-
-        if (existingOrderItem == null) {
-            return Conflict("No existe el carrito con ese id");
-        } else {
-            existingOrderItem.quantity = orderItem.quantity;
-            existingOrderItem.productId = orderItem.productId;
-            
-            _context.SaveChanges(); //instruccion para guardar cambios
-
-            return Ok();
-        }
-    }
 
     /// <summary>
     /// Delete an order by Id

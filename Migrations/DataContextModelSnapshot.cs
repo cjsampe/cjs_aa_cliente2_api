@@ -30,7 +30,7 @@ namespace cjs_aa_cliente2_api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<int>("productID")
+                    b.Property<int>("productId")
                         .HasColumnType("int");
 
                     b.Property<int>("quantity")
